@@ -7,3 +7,8 @@ router.get('/', (req, res, next) => {
 });
 
 module.exports = router;
+
+
+router.get("/about", (req, res, next) => res.render("about.hbs"));
+
+router.get("/profile", (req, res, next) => res.render("profile.hbs"));
