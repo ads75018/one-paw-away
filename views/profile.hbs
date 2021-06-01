@@ -1,52 +1,77 @@
 <p>Profile</p>
 
 <form action="" method="GET" class="form-doggo">
-  <div class="form-thing">
-    <label for="name">Name:</label>
-    <input type="text" name="name" id="name" required />
-  </div>
-  <br>
-  <div class="form-thing">
-    <label for="type">Type:</label>
-    <input type="text" name="name" id="type" required />
-  </div>
-  <br>
-    <div class="form-thing">
-    <label >
-      Birthday:
-      <input type="text" name="birthday" required />
-    </label>
-    
-  </div>
-  <br>
-    <div class="form-thing">
-    <label for="location">Location:</label>
-    <input type="text" name="name" id="location" required />
-  </div>
-  <br>
-    <div class="form-thing">
-    <label for="type">Important:</label>
-    <input type="text" name="name" id="important" required />
-  </div>
-  <br>
-    <div class="form-thing">
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email" required />
-  </div>
-  <br>
-    <div class="form-thing">
-    <label for="password">Password:</label>
-    <input type="text" name="name" id="name" required />
-  </div>
-  <br>
-    <div class="form-thing">
-    <label for="bio">Bio:</label>
-    <textarea name="name" id="bio"  class="bio-thing" required></textarea>
-  </div>
-<div class="button-containers">
-  <button>Go Back</button>
-  <button>Save</button>
-  <button>Delete</button>
-</div>
-</form>
 
+  <div class="form-thing">
+    <label>Name:
+      <input type="text" name="name" required />
+    </label>
+  </div>
+
+  <br />
+
+  <div class="form-thing">
+    <label>Type:
+      <select name="pets" id="pet-select">
+        <option value="">Choose a Doggo</option>
+        <option value="beagle">Beagle</option>
+        <option value="bull-terrier">Bull Terrier</option>
+        <option value="scottish-terrier">Scottish Terrier</option>
+        <option value="shiba">Shiba</option>
+        <option value="samoyed">Samoyed</option>
+        <option value="pug">Pug</option>
+        <option value="chihuahua">Chihuahua</option>
+        <option value="husky">Husky</option>
+        <option value="labrador">Labrador</option>
+        <option value="french-bulldog">French Bulldog</option>
+      </select>
+    </label>
+
+  </div>
+
+  <br />
+
+  <div class="form-thing">
+    <label>
+      Birthday:
+      <input type="date" name="birthday" required />
+    </label>
+
+  </div>
+
+  <br />
+
+  <div class="form-thing">
+    <label>Location: <input type="text" name="location" required /> </label>
+
+  </div>
+  <br />
+
+  <div class="form-thing">
+    <label>Important: <input type="text" name="important" required /></label>
+  </div>
+  <br />
+
+  <div class="form-thing">
+    <label>Email: <input type="email" name="email" required /></label>
+
+  </div>
+  <br />
+
+  <div class="form-thing">
+    <label>Password: <input type="password" name="password" required /></label>
+  </div>
+  <br />
+
+  <div class="form-thing" id="form-hing">
+    <label>Bio:<textarea name="bio" id="bio" required></textarea></label>
+
+  </div>
+  <div class="button-containers">
+
+      <a id="button-link" href='/home'>Go Back</a>
+            <a id="button-link" href=''>Save</a>
+                  <a id="button-link" href='/home'>Delete</a>
+
+  </div>
+</form>

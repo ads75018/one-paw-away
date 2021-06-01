@@ -1,4 +1,3 @@
-
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-family: "Press Start 2P", cursive;
@@ -17,7 +16,7 @@ header {
   justify-content: center;
 }
 
-.paws-container{
+.paws-container {
   padding-top: 10px;
   display: flex;
   flex-direction: row;
@@ -26,23 +25,21 @@ header {
   width: 25%;
 }
 
-.paws-left, .paws-right {
-
-margin: -40 10 -20 30;
+.paws-left,
+.paws-right {
+  margin: -40 10 -20 30;
   width: 70px;
-  
+
   transform: rotate(12deg);
   padding-bottom: 50px;
-
-
 }
-
 
 .bone {
   padding-top: 10px;
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 0px;
+  
 
   width: 500px;
 }
@@ -56,6 +53,8 @@ margin: -40 10 -20 30;
 
 .title a {
   text-decoration: none;
+  width: 140px;
+  background-color: black;
 }
 
 .bone-container {
@@ -81,7 +80,6 @@ margin: -40 10 -20 30;
 #content {
   display: flex;
   flex-direction: row;
-
 }
 
 .text-box {
@@ -94,12 +92,11 @@ margin: -40 10 -20 30;
   margin-right: auto;
   overflow: auto;
   font-size: 1.17em;
-  font-weight:bold;
+  font-weight: bold;
   padding-left: 100px;
   padding-right: 50px;
   border: 4px solid black;
-
-
+  position: relative;
 }
 .text-box p {
   text-align: center;
@@ -107,9 +104,8 @@ margin: -40 10 -20 30;
 
 .text-box::-webkit-scrollbar-track {
   border-left: 4px solid black;
-  background-color:white;
-  box-shadow: inset 0 0 5px white; 
-  
+  background-color: white;
+  box-shadow: inset 0 0 5px white;
 }
 
 .text-box::-webkit-scrollbar {
@@ -117,16 +113,13 @@ margin: -40 10 -20 30;
   color: black;
   border-radius: 10px;
   border: 1px solid #000;
-  
 }
 
 .text-box::-webkit-scrollbar-thumb {
- 
   background-color: white;
   border-left: 4px solid black;
   border-top: 4px solid black;
   border-bottom: 4px solid black;
-
 }
 
 #sidenav a {
@@ -135,7 +128,7 @@ margin: -40 10 -20 30;
   color: black;
   font-size: 1.17em;
   font-weight: bold;
-
+  width: 140px;
 }
 
 footer {
@@ -146,7 +139,6 @@ footer {
 }
 footer img {
   width: 110px;
-
 }
 
 #about {
@@ -160,30 +152,29 @@ footer img {
 #about a {
   position: absolute;
   top: 50%;
-  left:50%;
+  left: 50%;
   text-decoration: none;
   color: black;
   font-size: 1.17em;
-  font-weight:bold;
+  font-weight: bold;
   transform: translate(-50%, -50%);
-  padding-bottom:10px;
-
-
+  padding-bottom: 10px;
+  width: 140px;
 }
- #contact a {
+#contact a {
   position: absolute;
   top: 50%;
-  left:50%;
+  left: 50%;
   text-decoration: none;
   color: black;
   font-size: 1.17em;
-  font-weight:bold;
+  font-weight: bold;
   transform: translate(-50%, -50%);
-  padding-bottom:10px;
+  padding-bottom: 10px;
+  width: 140px;
+}
 
- }
-
- button {
+button {
   background-color: white; /* Green */
   border: none;
   color: black;
@@ -192,15 +183,15 @@ footer img {
   text-decoration: none;
   font-size: 16px;
   font: optional;
-  font-family : inherit;
+  font-family: inherit;
   border: 4px solid black;
 }
 
 input {
   width: 50%;
   border: 4px solid black;
+  font-family: "Press Start 2P", cursive;
 }
-
 
 .button-containers {
   display: flex;
@@ -209,9 +200,6 @@ input {
   margin-top: 40px;
 }
 
-.bio-thing{
-  background-image: red;
-}
 #bio {
   resize: none;
   border: 4px solid black;
@@ -220,6 +208,36 @@ input {
 }
 
 .norman {
-  width: 40%;
-  display: inline;
+  width:40%;
+  position: relative;
+}
+
+#pet-select {
+  font-family: "Press Start 2P", cursive;
+  width: 50%;
+  border: 4px solid black;
+}
+
+
+#button-link {
+  background-color: white; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font: optional;
+  font-family: inherit;
+  border: 4px solid black;
+  box-shadow: 0 9px #999;
+}
+
+#button-link:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+a {
+  bbackground-color: black;
 }
