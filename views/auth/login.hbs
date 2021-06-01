@@ -6,8 +6,29 @@
  
     <label for="input-password">Password</label>
     <input type="password" name="password" id="input-password" placeholder="********" />
- 
+
+    
     <button type="submit">Login</button>
+    <button type="submit">Forgot Password</button>
+    
+     
+<title>Google SignIn</title>
+<meta name="google-signin-client_id" content="342397295945-668107qbv1igg0onn5nf6aaee7c0c9gm.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer>
+</script>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="script.js"></script>
+
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+<div class="data">
+  
+</div>
+
+
+    <h3>Or Sign in Using !</h3>
+
+
  
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
