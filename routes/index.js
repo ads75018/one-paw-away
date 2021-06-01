@@ -12,3 +12,8 @@ module.exports = router;
 router.get("/about", (req, res, next) => res.render("about.hbs"));
 
 router.get("/profile", (req, res, next) => res.render("profile.hbs"));
+
+
+router.get('/home', (req, res, next) => res.render ("home", {
+  isHome: true
+}))

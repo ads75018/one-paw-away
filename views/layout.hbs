@@ -45,12 +45,16 @@
     <div id="content">
 
     <div id="sidenav">
+      {{#if isHome}}
+<img class="norman" src="images/norman.png" alt="">
+      {{else}}
       <img class="menu-bone" src="images/Bone.png" alt="" />
       <a href="">Messages</a>
       <img class="menu-bone" src="images/Bone.png" alt="" />
       <a href="profile">Profile</a>
       <img class="menu-bone" src="images/Bone.png" alt="" />
-      <a href="">Log Out</a>
+      <a href="/">Log Out</a>
+      {{/if}}
     </div>
 
     <div class="text-box">
