@@ -46,37 +46,39 @@
     <div id="content">
 
       <div id="sidenav">
-          {{#if isLogin}}
-            <img class="norman" src="images/norman.png" alt="" />
-          {{else}}
+        {{#if isLogin}}
+          <img class="norman" src="images/norman.png" alt="" />
+          <div id="norm-bone" class="footer-links">
             <img class="menu-bone" src="images/Bone.png" alt="" />
-            <a href="">Messages</a>
-            <img class="menu-bone" src="images/Bone.png" alt="" />
-            <a href="profile">Profile</a>
-            <img class="menu-bone" src="images/Bone.png" alt="" />
-            <a
-              href="/home
-      "
-            >Log Out</a>
+            <div class="norm-text"> Welcome</div> 
+            
+          </div>
+        {{else}}
+          <img class="menu-bone" src="images/Bone.png" alt="" />
+          <a href="">Messages</a>
+          <img class="menu-bone" src="images/Bone.png" alt="" />
+          <a href="profile">Profile</a>
+          <img class="menu-bone" src="images/Bone.png" alt="" />
+          <a href="/home">Log Out</a>
 
-          {{/if}}
-        </div>
-
-        <div class="text-box">
-
-          <h3>
-
-            {{{body}}}
-
-          </h3></div>
-
+        {{/if}}
       </div>
 
-      {{#if isClassifieds}}
+      <div class="text-box">
+
+        <h3>
+
+          {{{body}}}
+
+        </h3></div>
+
+    </div>
+
+    {{#if isClassifieds}}
       <div class="button-containers">
-  <a class="button-link" href="/">Click for matches!</a>
-</div>
-{{/if}}
+        <a class="button-link" href="/">Click for matches!</a>
+      </div>
+    {{/if}}
 
     <footer>
       <div class="rose-left">

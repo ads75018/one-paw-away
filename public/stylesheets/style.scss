@@ -1,8 +1,334 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Press Start 2P", cursive;
+  background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 58.32%,
+      rgba(14, 11, 197, 0.619792) 100%
+    ),
+    linear-gradient(180deg, #0085ff 0%, rgba(255, 255, 255, 0) 100%), #1386f1;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paws-container {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 25%;
+}
+
+.paws-left,
+.paws-right {
+  margin: -40 10 -20 30;
+  width: 70px;
+
+  transform: rotate(12deg);
+  padding-bottom: 50px;
+}
+
+.bone {
+  padding-top: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 0px;
+
+  width: 500px;
+}
+
+.title {
+  transform: translate(114px, -130px);
+  font-size: 2.2em;
+  text-decoration: none;
+  color: black;
+}
+
+.title a {
+  text-decoration: none;
+  width: 140px;
+  background-color: black;
+}
+
+.bone-container {
+  height: 200px;
+}
+.paws-right {
+  width: 70px;
+  transform: rotate(-12deg);
+  padding-bottom: 50px;
+}
+.menu-bone {
+  width: 350px;
+  padding-bottom: 15px;
+}
+
+#sidenav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 30px;
+  width: 380px;
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+
+}
+
+// #form-hing {
+//   display: flex;
+//   align-items: flex-start;
+// }
+
+.text-box {
+  margin-top: 50px;
+  width:600px;
+  height: 430px;
+  background-color: white;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+  font-size: 1.17em;
+  font-weight: bold;
+  padding-left: 100px;
+  padding-right: 50px;
+  border: 4px solid black;
+}
+.text-box p {
+  text-align: center;
+}
+
+.text-box::-webkit-scrollbar-track {
+  border-left: 4px solid black;
+  background-color: white;
+  box-shadow: inset 0 0 5px white;
+}
+
+.text-box::-webkit-scrollbar {
+  width: 40px;
+  color: black;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+.text-box::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-left: 4px solid black;
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+}
+
+#sidenav a {
+  transform: translate(110px, -90px);
+  text-decoration: none;
+  color: black;
+  font-size: 1.17em;
+  font-weight: bold;
+  width: 140px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+footer img {
+  width: 110px;
+}
+
+#about {
+  position: relative;
+}
+
+#contact {
+  position: relative;
+}
+
+#norm-bone {
+  position: absolute;
+  transform: translate(150px, 400px);
+}
+
+#about a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-decoration: none;
+  color: black;
+  font-size: 1.17em;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  padding-bottom: 10px;
+  width: 140px;
+}
+#contact a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-decoration: none;
+  color: black;
+  font-size: 1.17em;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  padding-bottom: 10px;
+  width: 140px;
+}
+
+button {
+  background-color: white; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font: optional;
+  font-family: inherit;
+  border: 4px solid black;
+}
+
+input {
+  width: 50%;
+  border: 4px solid black;
+  font-family: "Press Start 2P", cursive;
+}
+
+.button-containers {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  margin-top: 40px;
+}
+
+#bio {
+  resize: none;
+  border: 4px solid black;
+  width: 50%;
+  height: 35%;
+}
+
+.norman {
+  width: 30%;
+  position: absolute;
+  transform: translate(40px, -50px);
+}
+
+.norm-bone {
+  position: absolute;
+  transform: translate(40px, -50px);
+}
+.norm-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-decoration: none;
+  color: black;
+  font-size: 1.17em;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  padding-bottom: 10px;
+  width: 140px;
+}
+
+#pet-select {
+  font-family: "Press Start 2P", cursive;
+  width: 50%;
+  border: 4px solid black;
+}
+
+#button-link {
+  background-color: white; /* Green */
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font: optional;
+
+  font-family: inherit;
+  border: 4px solid black;
+  box-shadow: 0 9px #999;
+
+}
+
+#button-link:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 a {
-  color: #00B7FF;
+  bbackground-color: black;
+}
+
+.button-containers-two {
+  display: flex;
+  width: 350px;
+  flex-direction: column;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 0%;
+}
+
+.button-link-two {
+  background-color: white; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font: optional;
+  font-family: inherit;
+  border: 4px solid black;
+  box-shadow: 0 9px #999;
+  height: 4px;
+  
+
+}
+
+.button-link-two:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#login-button {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.google-pic {
+  width: 7%;
+}
+
+.fb-pic {
+  width: 8%;
+}
+
+.signinpics {
+  display: flex;
+justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar {
+  border: 4px solid black;
+
+}
+
+.header-classifieds{
+  position: fixed;
 }

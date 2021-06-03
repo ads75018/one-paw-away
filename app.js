@@ -58,6 +58,17 @@ app.use('/', index);
 const authRouter = require('./routes/auth.routes');
 app.use('/', authRouter);
 
+
+app.get('/test1', function(req, res, next){
+  res.render('test',{
+    isLogin:false
+  })
+})
+app.get('/test2', function(req, res, next){
+  res.render('test',{
+    isLogin:true
+  })
+})
 // const app = express();
 
 

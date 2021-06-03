@@ -22,14 +22,14 @@ router.post("/signup", (req, res, next) => {
   })
     .then((userFromDB) => {
       console.log("Newly created user is: ", userFromDB);
-      res.redirect("/userProfile");
+      res.redirect("/profile");
     })
     .catch((error) => next(error));
 });
 
-router.get("/userProfile", (req, res, next) => {
-  res.render("users/user-profile", { userInSession: req.session.currentUser });
-});
+// router.get("/profile", (req, res, next) => {
+//   res.render("users/user-profile", { userInSession: req.session.currentUser });
+// });
 
 router.get("/login", (req, res, next) => {
   res.render("auth/login", {

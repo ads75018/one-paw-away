@@ -1,18 +1,25 @@
-<div id="signup">
-  <h2>Signup</h2>
-  <form action="/signup" method="POST">
-    <label>
-      Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
+<p>Signup</p>
 
-    <label>
-      Password
-      <input type="password" name="password" id="input-password" placeholder="********" />
-    </label>
+<form action="/signup" method="POST">
+  <label>
+    Email:
+    <input type="text" name="username" />
+  </label>
+  <br />
+  <br />
 
-    <button>Create account</button>
+  <label>
+    Password:
+    <input
+      type="password"
+      name="password"
+      id="input-password"
+    />
+  </label>
 
-    {{!-- error message will be added here --}}
-  </form>
-</div>
+  <div class="button-containers">
+    <button id="button-link">Create account</button>
+  </div>
+
+  {{! error message will be added here }}
+</form>
