@@ -39,7 +39,6 @@ header {
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 0px;
-  
 
   width: 500px;
 }
@@ -80,11 +79,12 @@ header {
 #content {
   display: flex;
   flex-direction: row;
+
 }
 
 .text-box {
   margin-top: auto;
-  width: 600px;
+  width:600px;
   height: 430px;
   background-color: white;
   justify-content: center;
@@ -96,7 +96,6 @@ header {
   padding-left: 100px;
   padding-right: 50px;
   border: 4px solid black;
-  position: relative;
 }
 .text-box p {
   text-align: center;
@@ -208,9 +207,11 @@ input {
 }
 
 .norman {
-  width:40%;
-  position: relative;
+  width: 190px;
+
+
 }
+
 
 #pet-select {
   font-family: "Press Start 2P", cursive;
@@ -218,8 +219,43 @@ input {
   border: 4px solid black;
 }
 
-
 #button-link {
+  background-color: white; /* Green */
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font: optional;
+
+  font-family: inherit;
+  border: 4px solid black;
+  box-shadow: 0 9px #999;
+
+}
+
+#button-link:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+a {
+  bbackground-color: black;
+}
+
+.button-containers-two {
+  display: flex;
+  width: 350px;
+  flex-direction: column;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 0%;
+}
+
+.button-link-two {
   background-color: white; /* Green */
   border: none;
   color: black;
@@ -231,13 +267,41 @@ input {
   font-family: inherit;
   border: 4px solid black;
   box-shadow: 0 9px #999;
+  height: 4px;
+  
+
 }
 
-#button-link:active {
+.button-link-two:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
-a {
-  bbackground-color: black;
+#login-button {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.google-pic {
+  width: 7%;
+}
+
+.fb-pic {
+  width: 8%;
+}
+
+.signinpics {
+  display: flex;
+justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar {
+  border: 4px solid black;
+
+}
+
+.header-classifieds{
+  position: fixed;
 }

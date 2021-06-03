@@ -27,7 +27,8 @@
 
       <div class="bone-container">
         <img class="bone" src="images/Bone.png" alt="Bone" />
-        <a href="/home" style="text-decoration: none;"><h1 class="title">One Paw Away</h1></a>
+        <a href="/home" style="text-decoration: none;"><h1 class="title">One Paw
+            Away</h1></a>
       </div>
 
       <div class="paws-container"><img
@@ -44,35 +45,38 @@
 
     <div id="content">
 
-    <div id="sidenav">
-      {{#if isHome}}
-<img class="norman" src="images/norman.png" alt="">
-      {{else}}
-      <img class="menu-bone" src="images/Bone.png" alt="" />
-      <a href="">Messages</a>
-      <img class="menu-bone" src="images/Bone.png" alt="" />
-      <a href="profile">Profile</a>
-      <img class="menu-bone" src="images/Bone.png" alt="" />
-      <a href="/home
-      ">Log Out</a>
-      
-      {{/if}}
-    </div>
+      <div id="sidenav">
+          {{#if isLogin}}
+            <img class="norman" src="images/norman.png" alt="" />
+          {{else}}
+            <img class="menu-bone" src="images/Bone.png" alt="" />
+            <a href="">Messages</a>
+            <img class="menu-bone" src="images/Bone.png" alt="" />
+            <a href="profile">Profile</a>
+            <img class="menu-bone" src="images/Bone.png" alt="" />
+            <a
+              href="/home
+      "
+            >Log Out</a>
 
-    <div class="text-box">
+          {{/if}}
+        </div>
 
-      <h3>
+        <div class="text-box">
+
+          <h3>
 
             {{{body}}}
-      
 
-    </h3></div>
+          </h3></div>
 
+      </div>
 
-    </div>
-
-
-
+      {{#if isClassifieds}}
+      <div class="button-containers">
+  <a class="button-link" href="/">Click for matches!</a>
+</div>
+{{/if}}
 
     <footer>
       <div class="rose-left">
@@ -86,17 +90,14 @@
       </div>
 
       <div id="about" class="footer-links">
-      <img class="menu-bone" src="images/Bone.png" alt="" />
-      <a href="/about">About Us </a>
+        <img class="menu-bone" src="images/Bone.png" alt="" />
+        <a href="/about">About Us </a>
       </div>
 
       <div id="contact" class="footer-links">
-      <img class="menu-bone" src="images/Bone.png" alt="" />
-      <a href="mailto:adamghaoul@gmail.com?subject=One Paw Away">Contact</a>
+        <img class="menu-bone" src="images/Bone.png" alt="" />
+        <a href="mailto:adamghaoul@gmail.com?subject=One Paw Away">Contact</a>
       </div>
-
-
-
 
       <div class="rose-right">
         <img src="images/rose right.png" alt="" />

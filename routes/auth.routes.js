@@ -32,7 +32,9 @@ router.get("/userProfile", (req, res, next) => {
 });
 
 router.get("/login", (req, res, next) => {
-  res.render("auth/login");
+  res.render("auth/login", {
+    isLogin: true
+  });
 });
 
 router.post("/login", (req, res, next) => {
