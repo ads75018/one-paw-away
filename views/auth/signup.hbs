@@ -1,25 +1,117 @@
 <p>Signup</p>
 
 <form action="/signup" method="POST">
-  <label>
-    Email:
-    <input type="text" name="username" />
-  </label>
-  <br />
+
+
+  <div class="form-thing">
+    <label>Name:
+      <input type="text" name="name" required />
+    </label>
+  </div>
+  <br>
+
+   <div class="form-thing">
+    <label>Type:
+      <select name="pets" id="pet-select">
+        <option value="">Choose a Doggo</option>
+        <option value="beagle">Beagle</option>
+        <option value="bull-terrier">Bull Terrier</option>
+        <option value="scottish-terrier">Scottish Terrier</option>
+        <option value="shiba">Shiba</option>
+        <option value="samoyed">Samoyed</option>
+        <option value="pug">Pug</option>
+        <option value="chihuahua">Chihuahua</option>
+        <option value="husky">Husky</option>
+        <option value="labrador">Labrador</option>
+        <option value="french-bulldog">French Bulldog</option>
+      </select>
+    </label>
+  </div>
+
+<br>
+
+  <div class="form-thing">
+    <label>
+      Birthday:
+      <input type="date" name="birthday" required />
+    </label>
+  </div>
+  <br>
+
+  <div class="form-thing">
+    <label>
+      Location:
+      <input type="text" name="location" required />
+    </label>
+  </div>
+  <br>
+
+  <div class="form-thing">
+    <label>Important: <input type="text" name="important" required /></label>
+  </div>
+  <br>
+
+  <div class="form-thing">
+    <label>
+      Email:
+      <input type="text" name="username" />
+    </label>
+  </div>
+
   <br />
 
-  <label>
-    Password:
-    <input
-      type="password"
-      name="password"
-      id="input-password"
-    />
-  </label>
+  <div class="form-thing">
+    <label>
+      Password:
+      <input type="password" name="password" />
+    </label>
+  </div>
 
+
+ 
+  <br />
+
+  <div class="form-thing" id="form-hing">
+    <label>Bio:<textarea name="bio" id="bio" required></textarea></label>
+
+  </div>
+  
   <div class="button-containers">
     <button id="button-link">Create account</button>
   </div>
 
   {{! error message will be added here }}
 </form>
+
+{{! 
+<p>Profile</p> }}
+{{! 
+<form action="" method="GET" class="form-doggo">
+
+
+
+  <br />
+
+
+
+  </div>
+
+  <br />
+
+
+  </div>
+
+  <br />
+
+ 
+  <br />
+
+
+  <div class="button-containers">
+
+      <a id="button-link" href='/home'>Go Back</a>
+            <a id="button-link" href=''>Save</a>
+                  <a id="button-link" href='/home'>Delete</a>
+
+  </div>
+</form> }}

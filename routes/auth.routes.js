@@ -12,6 +12,13 @@ router.get("/signup", (req, res, next) => {
 router.post("/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
+  const name = req.body.name;
+  const pets = req.body.pets
+  const birthday = req.body.birthday
+  const location = req.body.location
+  const important = req.body.important
+  const bio = req.body.bio
+
 
   const hashedPassword = bcryptjs.hashSync(password, salt);
   console.log(`Password hash: ${hashedPassword}`);
@@ -19,10 +26,17 @@ router.post("/signup", (req, res, next) => {
   User.create({
     username,
     passwordHash: hashedPassword,
+    name,
+    pets,
+    birthday,
+    location,
+    important,
+    bio
+
   })
     .then((userFromDB) => {
       console.log("Newly created user is: ", userFromDB);
-      res.redirect("/profile");
+      res.redirect("/classifieds");
     })
     .catch((error) => next(error));
 });
