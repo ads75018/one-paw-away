@@ -1,22 +1,26 @@
 const express = require("express");
 const router = express.Router();
 
-const Doggo = require("../models/User.model");
+const User = require("../models/User.model");
 
-/* GET home page */
-// router.get("/", (req, res, next) => {
-//   res.render("index");
-// });
+
+
+// /* GET home page */
+ router.get("/", (req, res, next) => {
+   res.render("index");
+ });
 
 module.exports = router;
 
 router.get("/about", (req, res, next) => res.render("about.hbs"));
 
 router.get("/profile", (req, res, next) => {
-  Doggo.find()
-    .then((allTheDoggosFromDB) => {
-      console.log(allTheDoggosFromDB);
-      res.render("profile.hbs", { doggos: allTheDoggosFromDB });
+  console.log('message', req.session.currentUser)
+  User.findById(req.session.currentUser._id)
+    .then((user) => {
+      console.log('ici=>',user);
+      res.render("profile.hbs", {user});
+      // user.simpleDate = user.birthday.toISOString().split('T')[0]
     })
     .catch((error) => {
       console.log("Error while getting the Doggos from DB:", error);
@@ -24,10 +28,24 @@ router.get("/profile", (req, res, next) => {
     });
 });
 
+
+// router.get("/profile", (req, res, next) => {
+//   User.findOne({_id: req.params.id})
+//     .then((user) => {
+//       console.log('this is:',user);
+//       res.render("profile.hbs", {user});
+//       // user.simpleDate = user.birthday.toISOString().split('T')[0]
+//     })
+//     .catch((error) => {
+//       console.log("Error while getting the Doggos from DB:", error);
+//       next(error);
+//     });
+// });
+
 router.get("/classifieds", (req, res, next) => {
-  Doggo.find()
+  User.find()
     .then((allTheDoggosFromDB) => {
-      console.log(allTheDoggosFromDB);
+      console.log(allTheDoggosFromDB[0]);
       res.render("classifieds.hbs", {
         isClassifieds: true,
         doggos: allTheDoggosFromDB,

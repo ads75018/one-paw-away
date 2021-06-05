@@ -4,27 +4,35 @@
 
   <div class="form-thing">
     <label>Name:
-      <input type="text" name="name" required />
+      <input type="text" name="name" required value="{{user.name}}"readonly />
     </label>
   </div>
 
   <br />
 
   <div class="form-thing">
-    <label>Type:
+    {{!-- <label>Type:
       <select name="pets" id="pet-select">
-        <option value="">Choose a Doggo</option>
-        <option value="beagle">Beagle</option>
-        <option value="bull-terrier">Bull Terrier</option>
-        <option value="scottish-terrier">Scottish Terrier</option>
-        <option value="shiba">Shiba</option>
-        <option value="samoyed">Samoyed</option>
-        <option value="pug">Pug</option>
-        <option value="chihuahua">Chihuahua</option>
-        <option value="husky">Husky</option>
-        <option value="labrador">Labrador</option>
-        <option value="french-bulldog">French Bulldog</option>
+        <option value="{{id}}" {{#if incast}}selected{{/if}}>{{user.pets}}</option>
+        {{!-- <option value="" selected> {{user.pets}}</option> --}}
+        {{!-- <option value="">Choose a Doggo</option>
+        <option value="Beagle">Beagle</option>
+        <option value="Bull Terrier">Bull Terrier</option>
+        <option value="Scottish Terrier">Scottish Terrier</option>
+        <option value="Shiba">Shiba</option>
+        <option value="Samoyed">Samoyed</option>
+        <option value="Pug">Pug</option>
+        <option value="Chihuahua">Chihuahua</option>
+        <option value="Husky">Husky</option>
+        <option value="Labrador">Labrador</option>
+        <option value="French Bulldog">French Bulldog</option>
+       
       </select>
+    </label> --}} 
+
+    <label>
+      Type:
+      <input type="text" name="type" value="{{user.pets}}" style="text-transform: capitalize;" readonly required  />
     </label>
 
   </div>
@@ -34,7 +42,7 @@
   <div class="form-thing">
     <label>
       Birthday:
-      <input type="date" name="birthday" required />
+      <input type="date" name="birthday" value="{{user.simpleDate}}" readonly required  />
     </label>
 
   </div>
@@ -42,29 +50,29 @@
   <br />
 
   <div class="form-thing">
-    <label>Location: <input type="text" name="location" required placeholder="{{username}}"readonly /> </label>
+    <label>Location: <input type="text" name="location" required value="{{user.location}}" /> </label>
 
   </div>
   <br />
 
   <div class="form-thing">
-    <label>Important: <input type="text" name="important" required /></label>
+    <label>Important: <input type="text" name="important" value="{{user.important}}" required /></label>
   </div>
   <br />
 
   <div class="form-thing">
-    <label>Email: <input type="email" name="email" required /></label>
+    <label>Email: <input type="email" name="email" required value="{{user.username}}" /></label>
 
   </div>
   <br />
 
   <div class="form-thing">
-    <label>Password: <input type="password" name="password" required /></label>
+    <label>Password: <input type="password" name="password" value="{{user.passwordHash}}" required /></label>
   </div>
   <br />
 
   <div class="form-thing" id="form-hing">
-    <label>Bio:<textarea name="bio" id="bio" required></textarea></label>
+    <label>Bio:<textarea name="bio" id="bio" required>{{user.bio}}</textarea></label>
 
   </div>
   <div class="button-containers">
