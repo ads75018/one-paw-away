@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 /* GET home page */
-router.get("/", (req, res, next) => {
-  res.render("index");
-});
+// router.get("/", (req, res, next) => {
+//   res.render("index");
+// });
 
 module.exports = router;
 
@@ -14,7 +14,7 @@ router.get("/profile", (req, res, next) => res.render("profile.hbs"));
 
 router.get("/classifieds", (req, res, next) => {
   res.render("classifieds.hbs", {
-    isClassfieds: true,
+    isClassifieds: true,
   })
 });
 

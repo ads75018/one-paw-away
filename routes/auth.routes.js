@@ -52,8 +52,9 @@ router.get("/login", (req, res, next) => {
 });
 
 router.post("/login", (req, res, next) => {
-  const { username, password } = req.body;
-  console.log("SESSION =====> ", req.session);
+  const username = req.body.username;
+  const password = req.body.password;
+  // console.log("SESSION =====> ", req.session);
 
   if (username === "" || password === "") {
     res.render("auth/login", {
@@ -70,8 +71,8 @@ router.post("/login", (req, res, next) => {
         });
         return;
       } else if (bcryptjs.compareSync(password, user.passwordHash)) {
-        // req.session.currentUser = user;
-        res.redirect("/userProfile");
+        req.session.currentUser = user;
+        res.redirect("/classifieds");
       } else {
         res.render("auth/login", { errorMessage: "Incorrect password." });
       }
@@ -81,7 +82,7 @@ router.post("/login", (req, res, next) => {
 
 router.post('/logout', (req, res, next) => {
   req.session.destroy();
-  res.redirect('/');
+  res.redirect('auth/login');
 });
 
 module.exports = router;
