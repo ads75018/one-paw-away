@@ -50,7 +50,6 @@ const userSchema = new Schema(
       required: [true, "Bio is required."],
       unique: true,
     },
-    _id: { type: String },
   },
   {
     timestamps: true,

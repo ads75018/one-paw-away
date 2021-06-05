@@ -11,6 +11,18 @@
     </label>
   </form>
 
-</div>
 
 
+<ul>
+  {{#each doggos}}
+    <li>
+      <a href="/movies/{{id}}">{{title}}</a>
+      <p>{{this.username}}</p>
+      ‒
+      {{!-- <a href="/movies/{{id}}/edit">Edit</a>
+      <form action="/movies/{{id}}/delete" method="POST"> --}}
+        {{!-- <button>Delete</button> --}}
+      </form>
+    </li>
+  {{/each}}
+</ul>
