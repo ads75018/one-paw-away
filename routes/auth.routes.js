@@ -54,18 +54,19 @@ router.get("/login", (req, res, next) => {
 router.post("/login", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
-  // console.log("SESSION =====> ", req.session);
+  console.log("SESSION =====> ", req.session);
 
-  if (username === "" || password === "") {
+  if (!username || !password) {
     res.render("auth/login", {
       errorMessage: "Please enter both, username and password to login.",
     });
     return;
   }
-
+    console.log("username is:", username)
   User.findOne({ username })
     .then((user) => {
       if (!user) {
+        console.log("coucou", user)
         res.render("auth/login", {
           errorMessage: "Username is not registered. Try with other username.",
         });

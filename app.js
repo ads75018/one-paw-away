@@ -8,6 +8,7 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const session      = require('express-session')
 
 
 mongoose
@@ -24,6 +25,8 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
+require('./configs/session.config')(app)
+
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -37,6 +40,8 @@ app.use(require('node-sass-middleware')({
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
+
+
       
 
 app.set('views', path.join(__dirname, 'views'));
@@ -56,6 +61,7 @@ app.use('/', index);
 
 // Routers
 const authRouter = require('./routes/auth.routes');
+const { constants } = require('buffer');
 app.use('/', authRouter);
 
 
