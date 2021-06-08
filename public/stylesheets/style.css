@@ -66,7 +66,7 @@ header {
 
 .text-box {
   margin-top: 50px;
-  width: 600px;
+  width: 700px;
   height: 430px;
   background-color: white;
   justify-content: center;
@@ -75,8 +75,6 @@ header {
   overflow: auto;
   font-size: 1.17em;
   font-weight: bold;
-  padding-left: 100px;
-  padding-right: 50px;
   border: 4px solid black; }
 
 .text-box p {
@@ -273,12 +271,74 @@ a {
   margin-right: auto; }
 
 .search-bar {
-  border: 4px solid black; }
+  border-bottom: 4px solid black;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  position: relative;
+  padding-left: 10px; }
+
+.search-bar > label > input {
+  margin-left: 47px; }
+
+.search-bar > label > button {
+  padding: 0%; }
+
+.search-bar-classifieds {
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px; }
+
+.search-bar-classifieds > label {
+  position: relative; }
+
+.search-bar-classifieds > label > select {
+  margin-left: 200px; }
 
 .header-classifieds {
-  position: fixed; }
+
+display: flex;
+flex-direction: column; }
+  
 
 textarea {
   font-family: "Press Start 2P", cursive; }
+
+li {
+  margin: 0;
+  padding: 50px 0 36px 160px;
+  list-style: none;
+  background-image: url("https://i.ibb.co/xHZ6sSS/rose-avatar.jpg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 80px; }
+
+.capitilize {
+  text-transform: capitalize;
+  display: inline; }
+
+.doggo-name {
+  text-decoration: none;
+  color: black; }
+
+#button-link-match {
+  background-color: white;
+  /* Green */
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font: optional;
+  font-family: inherit;
+  border: 4px solid black;
+  transform: translate(55%, -70%);
+  position: absolute; }
+
+.search-hing {
+  width: 2x;
+  height: 2px; }
 
 /*# sourceMappingURL=style.css.map */
