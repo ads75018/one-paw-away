@@ -1,10 +1,28 @@
-{{doggo.name}}
+<h2>Welcome {{doggo.username}}!</h2>
 
- <div class="button-containers">
+<div class = "doggo">
+  <ul>
+    {{#each doggos}}
+    <li>
+      <img src="{{doggo.imageURL}}" alt="photo-user">
+      <p>Haec igitur {{doggo.bio}}</p>
+      <p>Type : {{doggo.pets}}</p>
+      <p> Age : {{doggo.birthday}}</p>
+      <p>Location : {{doggo.location}}</p>
+      <p>important {{doggo.important}}</p>
+    </li>
+    {{/each}}
+  </ul>
+</div>
+
+
+
+
+
+
+  <div class="button-containers">
     <a id="button-link" href='/home'>Go Back</a>
+    <a id="button-link" href='/Send-Bone'>Send Bone</a>
+    </div>
 
   </div>
-
-  <form action="/:{{id}}" method="POST" class="send-bone">
-  <button > Send Bone</button>
-  </form>

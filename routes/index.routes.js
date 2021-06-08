@@ -21,6 +21,8 @@ module.exports = router;
 
 router.get("/about", (req, res, next) => res.render("about.hbs"));
 
+router.get("/doggo", (req, res, next) => res.render("doggo.hbs"));
+
 router.get("/profile", ensureIsLogged, (req, res, next) => {
   console.log("message", req.session.currentUser);
   User.findById(req.session.currentUser._id)
