@@ -64,7 +64,40 @@
         {{/if}}
       </div>
 
+      
+
       <div class="text-box">
+
+            {{#if isClassifieds}}
+ <div class="header-classifieds">
+  <form class="search-bar" id="form" role="search">
+    <label>Search:
+      <input type="search" name="search" />
+      <button>Search</button>
+    </label>
+  </form>
+  <form class="search-bar-classifieds" id="form" role="search">
+ <label>Type:
+      <select name="pets" id="pet-select">
+        <option value="">Choose a Doggo</option>
+        <option value="beagle">Beagle</option>
+        <option value="bull-terrier">Bull Terrier</option>
+        <option value="scottish-terrier">Scottish Terrier</option>
+        <option value="shiba">Shiba</option>
+        <option value="samoyed">Samoyed</option>
+        <option value="pug">Pug</option>
+        <option value="chihuahua">Chihuahua</option>
+        <option value="husky">Husky</option>
+        <option value="labrador">Labrador</option>
+        <option value="french-bulldog">French Bulldog</option>
+      </select>
+    </label>
+  </form>
+
+  </div>
+          {{else}}
+    {{/if}}
+       
 
         <h3>
 
@@ -76,7 +109,7 @@
 
     {{#if isClassifieds}}
       <div class="button-containers">
-        <a class="button-link" href="/">Click for matches!</a>
+        <a id="button-link-match" href="/">Click for matches!</a>
       </div>
           {{else}}
     {{/if}}

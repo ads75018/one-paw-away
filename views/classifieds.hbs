@@ -1,28 +1,13 @@
-<div class="header-classifieds">
-  <form class="search-bar" id="form" role="search">
-    <label>Search:
-      <input type="search" name="search" />
-    </label>
-  </form>
-
-  <form class="search-bar" id="form" role="search">
-    <label>Organize by:
-      <input type="search" name="search" />
-    </label>
-  </form>
 
 
+  <div class="parent">
 
 <ul>
   {{#each doggos}}
     <li>
-      <a href="/movies/{{id}}">{{title}}</a>
-      <p>{{this.username}}</p>
-      ‒
-      {{!-- <a href="/movies/{{id}}/edit">Edit</a>
-      <form action="/movies/{{id}}/delete" method="POST"> --}}
-        {{!-- <button>Delete</button> --}}
-      </form>
+      <a class="doggo-name" href="/classifieds/{{id}}">{{name}}:<div class="capitilize">{{pets}}</div>, 4 y/o, {{location}}, {{important}}.</a> 
+
     </li>
   {{/each}}
 </ul>
+

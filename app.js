@@ -9,6 +9,7 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 const session      = require('express-session')
+const MongoStore = require("connect-mongo")(session);
 
 require('./configs/db.config')
 
@@ -28,6 +29,16 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 const app = express();
 
 require('./configs/session.config')(app)
+
+app.use(session({
+  secret: "one-paw-away",
+  cookie: { maxAge: 60000 },
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60 // 1 day
+  })
+}));
+
 
 // Middleware Setup
 app.use(logger('dev'));

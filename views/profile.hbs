@@ -1,6 +1,6 @@
 <p>Profile</p>
 
-<form action="" method="GET" class="form-doggo">
+<form action="/profile" method="POST" class="form-doggo">
 
   <div class="form-thing">
     <label>Name:
@@ -67,7 +67,7 @@
   <br />
 
   <div class="form-thing">
-    <label>Password: <input type="password" name="password" value="{{user.passwordHash}}" required /></label>
+    <label>Password: <input type="password" name="password" value="{{user.passwordHash}}" readonly required /></label>
   </div>
   <br />
 
@@ -77,9 +77,14 @@
   </div>
   <div class="button-containers">
 
-      <a id="button-link" href='/home'>Go Back</a>
-            <a id="button-link" href=''>Save</a>
-                  <a id="button-link" href='/home'>Delete</a>
+      <a id="button-link" href='/classifieds'>Go Back</a>
+
+
+      <button id="button-link" type="submit">Save</button>
+
+            {{!-- <a id="button-link" href='/profile/save'>Save</a>
+                  <a id="button-link" href='/home'>Delete</a> --}}
 
   </div>
 </form>
+
