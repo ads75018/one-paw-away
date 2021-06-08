@@ -297,10 +297,7 @@ a {
   margin-left: 200px; }
 
 .header-classifieds {
-
-display: flex;
-flex-direction: column; }
-  
+  background-color: red; }
 
 textarea {
   font-family: "Press Start 2P", cursive; }

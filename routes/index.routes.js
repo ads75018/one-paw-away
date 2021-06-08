@@ -76,6 +76,16 @@ router.get("/classifieds", ensureIsLogged, (req, res, next) => {
     });
 });
 
+router.get ("/:id" , ensureIsLogged, (req, res, next)=>{
+  User.findOne({_id: req.params.id})
+  .then(doggo => {
+    res.render('doggo', {doggo})
+  })
+  .catch(error => next (error))
+})
+
+
+
 // router.get("/login", (req, res, next) => {
 //   res.render("auth/login", {
 //     isLogin: true,
