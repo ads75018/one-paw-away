@@ -16,8 +16,16 @@
 <ul>
   {{#each doggos}}
     <li>
-      <a href="/movies/{{id}}">{{title}}</a>
+      {{!-- <a href="/data{{id}}">{{title}}</a> --}}
       <p>{{this.username}}</p>
+      <p>{{this.pets}}</p>
+      <p>{{this.birthday}}</p>
+      <p>{{this.location}}</p>
+      <p>{{this.important}}</p>
+      
+      
+      
+
       ‒
       {{!-- <a href="/movies/{{id}}/edit">Edit</a>
       <form action="/movies/{{id}}/delete" method="POST"> --}}

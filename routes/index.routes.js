@@ -57,6 +57,21 @@ router.get("/classifieds", (req, res, next) => {
     });
 });
 
+router.get("/classifieds-doggo", (req, res, next) => {
+  User.find()
+    .then((allTheDoggosFromDB) => {
+      console.log(allTheDoggosFromDB[0]);
+      res.render("classifieds-doggo.hbs", {
+        isClassifieds: true,
+        doggos: allTheDoggosFromDB,
+      });
+    })
+    .catch((error) => {
+      console.log("Error while getting the Doggos from DB:", error);
+      next(error);
+    });
+});
+
 // router.get("/login", (req, res, next) => {
 //   res.render("auth/login", {
 //     isLogin: true,
