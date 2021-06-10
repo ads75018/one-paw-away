@@ -19,7 +19,11 @@ router.get("/", (req, res, next) => {
 
 module.exports = router;
 
+router.get("/home", (req, res, next) => res.render("home.hbs"));
+
 router.get("/about", (req, res, next) => res.render("about.hbs"));
+
+router.get("/classifieds", (req, res, next) => res.render("classifieds.hbs"));
 
 router.get("/doggo", (req, res, next) => res.render("doggo.hbs"));
 
