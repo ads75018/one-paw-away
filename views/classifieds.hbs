@@ -5,9 +5,9 @@
 <ul>
   {{#each doggos}}
     <li>
-      <a class="doggo-name" href="/{{id}}">{{name}}:<div class="capitilize">{{pets}}</div>, 4 y/o, {{location}}, {{important}}.</a> 
+      <a class="doggo-name" href="/doggos/{{id}}">{{name}}:<div class="capitilize">{{this.pets}}</div>, {{age}} , {{location}}, {{important}}.</a> 
 
     </li>
   {{/each}}
 </ul>
-
+</div>

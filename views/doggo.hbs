@@ -1,10 +1,26 @@
 {{doggo.name}}
+{{doggo.bio}}
+{{doggo.pets}}
+{{doggo.birthday}}
+{{doggo.important}}
+{{doggo.location}}
 
- <div class="button-containers">
-    <a id="button-link" href='/home'>Go Back</a>
+<div class="button-containers">
+  <a id="button-link" href="/home">Go Back</a>
+</div>
 
-  </div>
+{{#if isAccepted}}
+  <a href="/doggos/{{doggo.id}}/dm"> Message </a>
+{{/if}}
 
-  <form action="/:{{id}}" method="POST" class="send-bone">
-  <button > Send Bone</button>
-  </form>
+{{#if isBone}}
+  <a href="/doggos/{{doggo.id}}/accepted"> Accept </a>
+{{/if}}
+
+{{#if isNotSent}}
+  <a href="/{{doggo.id}}/send-bone"> Send Bone </a>
+{{/if}}
+
+{{#if isUser}}
+
+{{/if}}

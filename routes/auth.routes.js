@@ -41,9 +41,11 @@ router.post("/signup", (req, res, next) => {
     .catch((error) => next(error));
 });
 
-// router.get("/profile", (req, res, next) => {
+// router.get("/profile", (re©q, res, next) => {
 //   res.render("users/user-profile", { userInSession: req.session.currentUser });
 // });
+
+
 
 router.get("/login", (req, res, next) => {
   res.render("auth/login", {
@@ -81,9 +83,16 @@ router.post("/login", (req, res, next) => {
     .catch((error) => next(error));
 });
 
-router.post('/logout', (req, res, next) => {
+
+router.get('/logout', (req, res, next) => {
   req.session.destroy();
-  res.redirect('auth/login');
+  res.redirect('/login'); // GET /login
+  // res.send('oiiiii')
 });
+
+// router.post('/logout', (req, res) => {
+//   req.session.destroy();
+//   res.redirect('/login');
+// });
 
 module.exports = router;
