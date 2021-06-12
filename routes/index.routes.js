@@ -47,13 +47,30 @@ router.post("/profile", ensureIsLogged, (req, res, next) => {
     .catch((err) => next(err));
 });
 
-
-router.get("/:id/dms", ensureIsLogged, (req, res, next) => {
-
-  
-  res.render("dm");
+router.get("/doggos/:id/dms", ensureIsLogged, (req, res, next) => {
+  User.findById(req.session.currentUser._id)
+    .then((user) => {
+      User.findById(req.params.id).then((sender) => {
+        console.log("ici=>", user);
+        res.render("dm.hbs", { user, sender });
+      });
+    })
+    .catch((error) => {
+      console.log("Error while getting the Doggos from DB:", error);
+      next(error);
+    });
 });
 
+router.post("/doggos/:id/dms", ensureIsLogged, (req, res, next) => {
+  console.log("check this =>>>>>", req.body);
+  Message.create({
+    sender: req.session.currentUser._id,
+    receiver: req.params.id,
+    message: req.body,
+  })
+    .then((user) => res.redirect("/classifieds"))
+    .catch((err) => next(err));
+});
 
 router.get("/messages", ensureIsLogged, (req, res, next) => {
   console.log(req.session.currentUser);
@@ -73,14 +90,13 @@ router.get("/classifieds", ensureIsLogged, (req, res, next) => {
     .then((allTheDoggosFromDB) => {
       // [ {_id: , ... , age:  }, {}, ... ]
       for (let i = 0; i < allTheDoggosFromDB.length; i++) {
-        const doggo = allTheDoggosFromDB[i]
-        doggo.age = moment(allTheDoggosFromDB[i].birthday).format('LL');
-        console.log(doggo.age)
+        const doggo = allTheDoggosFromDB[i];
+        doggo.age = moment(allTheDoggosFromDB[i].birthday).format("LL");
+        console.log(doggo.age);
       }
       res.render("classifieds.hbs", {
         isClassifieds: true,
         doggos: allTheDoggosFromDB,
-
       });
     })
     .catch((error) => {
@@ -130,8 +146,6 @@ router.get("/doggos/:id/accepted", ensureIsLogged, (req, res, next) => {
 //     .then((user) => res.render("/classifieds", { user }))
 //     .catch((err) => next(err));
 // });
-
-
 
 router.get("/doggos/:id", ensureIsLogged, (req, res, next) => {
   console.log("doggo is :", req.params.id);
