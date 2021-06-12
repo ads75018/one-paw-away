@@ -4,7 +4,7 @@
 
   <div class="form-thing">
     <label>Name:
-      <input type="text" name="name" required value="{{user.name}}"readonly />
+      <input type="text" name="name" required value="{{user.name}}" maxlength="12" readonly />
     </label>
   </div>
 
@@ -50,13 +50,13 @@
   <br />
 
   <div class="form-thing">
-    <label>Location: <input type="text" name="location" required value="{{user.location}}" /> </label>
+    <label>Location: <input type="text" name="location" required value="{{user.location}}" maxlength="10" /> </label>
 
   </div>
   <br />
 
   <div class="form-thing">
-    <label>Important: <input type="text" name="important" value="{{user.important}}" required /></label>
+    <label>Important: <input type="text" name="important" value="{{user.important}}" maxlength="25" required /></label>
   </div>
   <br />
 
@@ -72,7 +72,7 @@
   <br />
 
   <div class="form-thing" id="form-hing">
-    <label>Bio:<textarea name="bio" id="bio" required>{{user.bio}}</textarea></label>
+    <label>Bio:<textarea name="bio" id="bio" maxlength="280" required>{{user.bio}}</textarea></label>
 
   </div>
   <div class="button-containers">

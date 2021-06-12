@@ -1,8 +1,9 @@
 <div class="parent">
 
-<ul>
+<ul id="doggoList">
   {{#each doggos}}
     <li>
+<<<<<<< HEAD
       {{!-- <a href="/data{{id}}">{{title}}</a> --}}
       <p>{{this.username}}</p>
       <p>{{this.pets}}</p>
@@ -12,6 +13,9 @@
       
       
       
+=======
+      <a class="doggo-name" href="/doggos/{{id}}">{{name}}:<div class="capitilize">{{this.pets}}</div>, {{this.age}} , {{location}}, {{important}}.</a> 
+>>>>>>> 94d502bd64727e71a0ef086c97ec35a05796c9ae
 
       ‒
       {{!-- <a href="/movies/{{id}}/edit">Edit</a>
@@ -20,5 +24,6 @@
       </form>
     </li>
   {{/each}}
+
 </ul>
 </div>

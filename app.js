@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+require("./configs/db.config");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const express = require("express");
@@ -10,18 +10,12 @@ const logger = require("morgan");
 const path = require("path");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
-require("dotenv").config();
-require("./configs/db.config");
-
+const app = express();
 const app_name = require("./package.json").name;
 const debug = require("debug")(
   `${app_name}:${path.basename(__filename).split(".")[0]}`
 );
-
-const app = express();
-
 require("./configs/session.config")(app);
-
 
 app.use(
   session({
@@ -41,7 +35,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Express View engine setup
-
 app.use(
   require("node-sass-middleware")({
     src: path.join(__dirname, "public"),
@@ -65,17 +58,5 @@ app.use("/", index);
 const authRouter = require("./routes/auth.routes");
 const { constants } = require("buffer");
 app.use("/", authRouter);
-
-app.get("/test1", function (req, res, next) {
-  res.render("test", {
-    isLogin: false,
-  });
-});
-app.get("/test2", function (req, res, next) {
-  res.render("test", {
-    isLogin: true,
-  });
-});
-// const app = express();
 
 module.exports = app;
