@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 require('dotenv').config();
 
 const bodyParser   = require('body-parser');
@@ -16,7 +15,6 @@ require('./configs/db.config');
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
-=======
 require("dotenv").config();
 require("./configs/db.config");
 const bodyParser = require("body-parser");
@@ -29,7 +27,6 @@ const logger = require("morgan");
 const path = require("path");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
->>>>>>> 94d502bd64727e71a0ef086c97ec35a05796c9ae
 const app = express();
 const app_name = require("./package.json").name;
 const debug = require("debug")(
