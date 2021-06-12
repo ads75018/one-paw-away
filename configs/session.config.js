@@ -10,10 +10,10 @@ module.exports = (app) => {
       secret: process.env.SESS_SECRET,
       resave: false,
       saveUninitialized: true,
-      cookie: { maxAge:  null},
+      // cookie: { maxAge:  null},
       store: new MongoStore({
         mongooseConnection: mongoose.connection,
-        ttl: 60 * 60 * 24,
+      //   ttl: 60 * 60 * 24,
       }),
     })
   );

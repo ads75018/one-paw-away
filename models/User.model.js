@@ -1,5 +1,5 @@
 // User model here
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
 const userSchema = new Schema(
@@ -7,55 +7,55 @@ const userSchema = new Schema(
     username: {
       type: String,
       trim: true,
-      required: [true, 'Username is required.'],
-      unique: true
+      required: [true, "Username is required."],
+      unique: true,
+      match: [/^\S+@\S+\.\S+$/, "Please use a valid email address."],
+      lowercase: true,
     },
     passwordHash: {
       type: String,
-      required: [true, 'Password is required.']
+      required: [true, "Password is required."],
+      minlength: 6,
     },
     name: {
       type: String,
       trim: true,
-      required: [true, 'Name is required.'],
-      unique: true
+      required: [true, "Name is required."],
     },
     pets: {
       type: String,
       trim: true,
-      required: [true, 'Pet is required.'],
-      unique: true
+      required: [true, "Pet is required."],
     },
     birthday: {
       type: Date,
       trim: true,
-      required: [true, 'Birthday is required.'],
-      unique: true
+      required: [true, "Birthday is required."],
     },
     location: {
       type: String,
       trim: true,
-      required: [true, 'Location is required.'],
-      unique: true
+      required: [true, "Location is required."],
     },
     important: {
       type: String,
       trim: true,
-      required: [true, 'Info is required.'],
-      unique: true
+      required: [true, "Info is required."],
     },
     bio: {
       type: String,
       trim: true,
-      required: [true, 'Bio is required.'],
-      unique: true
+      required: [true, "Bio is required."],
     },
+    requests: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+    friends: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
   },
+
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
-const User = model('User', userSchema);
+const User = model("User", userSchema);
 
 module.exports = User;

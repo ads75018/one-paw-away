@@ -1,0 +1,26 @@
+
+
+{{!-- {{user.name}}
+<div>xxxxx</div>
+{{user.name}}
+<br> --}}
+{{!-- 
+
+{{user.requests}} --}}
+
+
+{{#each user.requests}}
+A bone from {{this.name}} 
+<a href="/{{this.id}}">open</a>
+{{/each}}
+
+
+
+
+<br>
+{{#each user.friends}}
+<br>
+You can message {{this.name}} 
+<a href="/open">open</a>
+{{/each}}
+
