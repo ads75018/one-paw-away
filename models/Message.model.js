@@ -12,7 +12,6 @@ const messageSchema = new Schema({
   message: {
     type: String,
     trim: true,
-    required: [true, "Bone is required."],
   },
 });
 const Message = model("Message", messageSchema);

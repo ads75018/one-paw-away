@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const moment = require("moment");
-const { render } = require("sass");
+
 
 const User = require("../models/User.model");
 const Message = require("../models/Message.model");
@@ -62,11 +62,12 @@ router.get("/doggos/:id/dms", ensureIsLogged, (req, res, next) => {
 });
 
 router.post("/doggos/:id/dms", ensureIsLogged, (req, res, next) => {
-  console.log("check this =>>>>>", req.body);
+  console.log("check this =>>>>>", req.body, req.session.currentUser._id,  req.body);
+
   Message.create({
     sender: req.session.currentUser._id,
     receiver: req.params.id,
-    message: req.body,
+    message: req.body.message,
   })
     .then((user) => res.redirect("/classifieds"))
     .catch((err) => next(err));
