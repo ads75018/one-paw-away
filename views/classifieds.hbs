@@ -2,12 +2,13 @@
 
   <div class="parent">
 
-<ul>
+<ul id="doggoList">
   {{#each doggos}}
     <li>
-      <a class="doggo-name" href="/doggos/{{id}}">{{name}}:<div class="capitilize">{{this.pets}}</div>, {{age}} , {{location}}, {{important}}.</a> 
+      <a class="doggo-name" href="/doggos/{{id}}">{{name}}:<div class="capitilize">{{this.pets}}</div>, {{this.age}} , {{location}}, {{important}}.</a> 
 
     </li>
   {{/each}}
+
 </ul>
 </div>

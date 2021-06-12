@@ -13,12 +13,11 @@ router.post("/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   const name = req.body.name;
-  const pets = req.body.pets
-  const birthday = req.body.birthday
-  const location = req.body.location
-  const important = req.body.important
-  const bio = req.body.bio
-
+  const pets = req.body.pets;
+  const birthday = req.body.birthday;
+  const location = req.body.location;
+  const important = req.body.important;
+  const bio = req.body.bio;
 
   const hashedPassword = bcryptjs.hashSync(password, salt);
   console.log(`Password hash: ${hashedPassword}`);
@@ -31,8 +30,7 @@ router.post("/signup", (req, res, next) => {
     birthday,
     location,
     important,
-    bio
-
+    bio,
   })
     .then((userFromDB) => {
       console.log("Newly created user is: ", userFromDB);
@@ -41,16 +39,14 @@ router.post("/signup", (req, res, next) => {
     .catch((error) => next(error));
 });
 
-// router.get("/profile", (re©q, res, next) => {
-//   res.render("users/user-profile", { userInSession: req.session.currentUser });
-// });
-
-
-
 router.get("/login", (req, res, next) => {
-  res.render("auth/login", {
-    isLogin: true
-  });
+  if (req.session.currentUser === undefined) {
+    res.render("auth/login", {
+      isLogin: true,
+    });
+  } else {
+    res.redirect("/classifieds");
+  }
 });
 
 router.post("/login", (req, res, next) => {
@@ -64,11 +60,11 @@ router.post("/login", (req, res, next) => {
     });
     return;
   }
-    console.log("username is:", username)
+  console.log("username is:", username);
   User.findOne({ username })
     .then((user) => {
       if (!user) {
-        console.log("coucou", user)
+        console.log("coucou", user);
         res.render("auth/login", {
           errorMessage: "Username is not registered. Try with other username.",
         });
@@ -83,16 +79,9 @@ router.post("/login", (req, res, next) => {
     .catch((error) => next(error));
 });
 
-
-router.get('/logout', (req, res, next) => {
+router.get("/logout", (req, res, next) => {
   req.session.destroy();
-  res.redirect('/login'); // GET /login
-  // res.send('oiiiii')
+  res.redirect("/login");
 });
-
-// router.post('/logout', (req, res) => {
-//   req.session.destroy();
-//   res.redirect('/login');
-// });
 
 module.exports = router;

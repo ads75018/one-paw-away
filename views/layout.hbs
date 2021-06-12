@@ -1,3 +1,4 @@
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,27 +20,27 @@
           src="images/Paw.png"
           alt=""
         />
-        <img class="paws-left" src="images/Paw.png" alt="" />
-        <img class="paws-left" src="images/Paw.png" alt="" />
-        <img class="paws-left" src="images/Paw.png" alt="" />
-        <img class="paws-left" src="images/Paw.png" alt="" />
+        <img class="paws-left" src="/images/Paw.png" alt="" />
+        <img class="paws-left" src="/images/Paw.png" alt="" />
+        <img class="paws-left" src="/images/Paw.png" alt="" />
+        <img class="paws-left" src="/images/Paw.png" alt="" />
       </div>
 
       <div class="bone-container">
-        <img class="bone" src="images/Bone.png" alt="Bone" />
+        <img class="bone" src="/images/Bone.png" alt="Bone" />
         <a href="/login" style="text-decoration: none;"><h1 class="title">One Paw
             Away</h1></a>
       </div>
 
       <div class="paws-container"><img
           class="paws-right"
-          src="images/Paw.png"
+          src="/images/Paw.png"
           alt=""
         />
-        <img class="paws-right" src="images/Paw.png" alt="" />
-        <img class="paws-right" src="images/Paw.png" alt="" />
-        <img class="paws-right" src="images/Paw.png" alt="" />
-        <img class="paws-right" src="images/Paw.png" alt="" />
+        <img class="paws-right" src="/images/Paw.png" alt="" />
+        <img class="paws-right" src="/images/Paw.png" alt="" />
+        <img class="paws-right" src="/images/Paw.png" alt="" />
+        <img class="paws-right" src="/images/Paw.png" alt="" />
       </div>
     </header>
 
@@ -47,19 +48,19 @@
 
       <div id="sidenav">
         {{#if isLogin}}
-          <img class="norman" src="images/norman.png" alt="" />
+          <img class="norman" src="/images/norman.png" alt="" />
           <div id="norm-bone" class="footer-links">
-            <img class="menu-bone" src="images/Bone.png" alt="" />
+            <img class="menu-bone" src="/images/Bone.png" alt="" />
             <div class="norm-text"> Welcome</div> 
             
           </div>
         {{else}}
-          <img class="menu-bone" src="images/Bone.png" alt="" />
-          <a href="classifieds">Classifieds</a>
-          <img class="menu-bone" src="images/Bone.png" alt="" />
-          <a href="profile">Profile</a>
-          <img class="menu-bone" src="images/Bone.png" alt="" />
-          <a href="logout">Log Out</a>
+          <img class="menu-bone" src="/images/Bone.png" alt="" />
+          <a href="/classifieds">Classifieds</a>
+          <img class="menu-bone" src="/images/Bone.png" alt="" />
+          <a href="/profile">Profile</a>
+          <img class="menu-bone" src="/images/Bone.png" alt="" />
+          <a href="/logout">Log Out</a>
 
 
             {{!-- <form id="logout-form" action="/logout" method="POST">
@@ -75,13 +76,24 @@
 
             {{#if isClassifieds}}
  <div class="header-classifieds">
-  <form class="search-bar" id="form" role="search">
-    <label>Search:
-      <input type="search" name="search" />
+
+
+<div id="search-bar-top">
+
+    {{!-- <form class="search" action="classifieds/search" method="GET">
+        <input class="bar" type="text"  name="resName">
+        <button><i class="fas fa-search"></i></button>
+    </form> --}}
+
+
+{{!-- 
+    <label class="search-bar">Search:
+      <input type="text" name="search" id="search-bar" />
       <button>Search</button>
-    </label>
-  </form>
-  <form class="search-bar-classifieds" id="form" role="search">
+    </label> --}}
+</div>
+
+  {{!-- <form class="search-bar-classifieds" id="form" role="search">
  <label>Type:
       <select name="pets" id="pet-select">
         <option value="">Choose a Doggo</option>
@@ -97,7 +109,7 @@
         <option value="french-bulldog">French Bulldog</option>
       </select>
     </label>
-  </form>
+  </form> --}}
 
   </div>
           {{else}}
@@ -112,42 +124,42 @@
 
     </div>
 
-    {{#if isClassifieds}}
+    {{!-- {{#if isClassifieds}}
       <div class="button-containers">
         <a id="button-link-match" href="/">Click for matches!</a>
       </div>
           {{else}}
-    {{/if}}
+    {{/if}} --}}
 
     <footer>
       <div class="rose-left">
-        <img src="images/rose left.png" alt="" />
+        <img src="/images/rose left.png" alt="" />
       </div>
       <div class="rose-left">
-        <img src="images/rose left.png" alt="" />
+        <img src="/images/rose left.png" alt="" />
       </div>
       <div class="rose-left">
-        <img src="images/rose left.png" alt="" />
+        <img src="/images/rose left.png" alt="" />
       </div>
 
       <div id="about" class="footer-links">
-        <img class="menu-bone" src="images/Bone.png" alt="" />
+        <img class="menu-bone" src="/images/Bone.png" alt="" />
         <a href="/about">About Us </a>
       </div>
 
       <div id="contact" class="footer-links">
-        <img class="menu-bone" src="images/Bone.png" alt="" />
+        <img class="menu-bone" src="/images/Bone.png" alt="" />
         <a href="mailto:adamghaoul@gmail.com?subject=One Paw Away">Contact</a>
       </div>
 
       <div class="rose-right">
-        <img src="images/rose right.png" alt="" />
+        <img src="/images/rose right.png" alt="" />
       </div>
       <div class="rose-right">
-        <img src="images/rose right.png" alt="" />
+        <img src="/images/rose right.png" alt="" />
       </div>
       <div class="rose-right">
-        <img src="images/rose right.png" alt="" />
+        <img src="/images/rose right.png" alt="" />
       </div>
 
     </footer>
