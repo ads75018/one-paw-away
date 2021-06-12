@@ -41,9 +41,11 @@ router.post("/signup", (req, res, next) => {
     .catch((error) => next(error));
 });
 
-// router.get("/profile", (req, res, next) => {
+// router.get("/profile", (re©q, res, next) => {
 //   res.render("users/user-profile", { userInSession: req.session.currentUser });
 // });
+
+
 
 router.get("/login", (req, res, next) => {
   res.render("auth/login", {
@@ -81,11 +83,14 @@ router.post("/login", (req, res, next) => {
     .catch((error) => next(error));
 });
 
-router.post('/logout', (req, res, next) => {
+
+router.get('/logout', (req, res, next) => {
   req.session.destroy();
-  res.redirect('auth/login');
+  res.redirect('/login'); // GET /login
+  // res.send('oiiiii')
 });
 
+<<<<<<< HEAD
 function ensureIsLogged(req, res, next) {
   if (req.session.currentUser) {
     next();
@@ -96,5 +101,11 @@ function ensureIsLogged(req, res, next) {
 router.get("/secret", ensureIsLogged, (req, res, next) => {
   res.render("secret");
 });
+=======
+// router.post('/logout', (req, res) => {
+//   req.session.destroy();
+//   res.redirect('/login');
+// });
+>>>>>>> 6a8f478a1e4fb0432e094707844894c39df9c6b0
 
 module.exports = router;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 on<h2>Welcome {{doggo.username}}!</h2>
 
 <div class = "doggo">
@@ -21,3 +22,31 @@ on<h2>Welcome {{doggo.username}}!</h2>
     </div>
 
 </div>
+=======
+{{doggo.name}}
+{{doggo.bio}}
+{{doggo.pets}}
+{{doggo.birthday}}
+{{doggo.important}}
+{{doggo.location}}
+
+<div class="button-containers">
+  <a id="button-link" href="/home">Go Back</a>
+</div>
+
+{{#if isAccepted}}
+  <a href="/doggos/{{doggo.id}}/dm"> Message </a>
+{{/if}}
+
+{{#if isBone}}
+  <a href="/doggos/{{doggo.id}}/accepted"> Accept </a>
+{{/if}}
+
+{{#if isNotSent}}
+  <a href="/{{doggo.id}}/send-bone"> Send Bone </a>
+{{/if}}
+
+{{#if isUser}}
+
+{{/if}}
+>>>>>>> 6a8f478a1e4fb0432e094707844894c39df9c6b0

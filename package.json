@@ -13,7 +13,7 @@
     "cloudinary": "^1.25.1",
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.5",
-    "dotenv": "^6.0.0",
+    "dotenv": "^6.2.0",
     "everyauth": "^0.4.9",
     "express": "^4.16.3",
     "express-session": "^1.17.2",

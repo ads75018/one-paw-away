@@ -44,7 +44,10 @@ const userSchema = new Schema(
       trim: true,
       required: [true, "Bio is required."],
     },
+    requests: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+    friends: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
   },
+
   {
     timestamps: true,
   }
