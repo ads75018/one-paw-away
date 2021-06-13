@@ -39,7 +39,7 @@ router.post("/signup", (req, res, next) => {
     .catch((error) => next(error));
 });
 
-router.get("/", (req, res, next) => {
+router.get("/login", (req, res, next) => {
   if (req.session.currentUser === undefined) {
     res.render("auth/login", {
       isLogin: true,
@@ -49,7 +49,7 @@ router.get("/", (req, res, next) => {
   }
 });
 
-router.post("/", (req, res, next) => {
+router.post("/login", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   console.log("SESSION =====> ", req.session);
@@ -81,7 +81,7 @@ router.post("/", (req, res, next) => {
 
 router.get("/logout", (req, res, next) => {
   req.session.destroy();
-  res.redirect("/");
+  res.redirect("/login");
 });
 
 module.exports = router;
