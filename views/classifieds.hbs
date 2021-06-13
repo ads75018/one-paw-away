@@ -1,14 +1,27 @@
+<div class="parent">
 
+  <ul id="doggoList">
+    {{#each doggos}}
+      <li>
+        <a class="doggo-name" href="/doggos/{{id}}">
 
-  <div class="parent">
+          {{#if isBeagle}} xx{{/if}}
+          {{#if isBullTerrier}} bulll{{/if}}
+          {{#if isScottishTerrier}}{{/if}}
+          {{#if isShiba}}{{/if}}
+          {{#if isSamoyed}}{{/if}}
+          {{#if isPug}}{{/if}}
+          {{#if isChihuahua}}{{/if}}
+          {{#if isHusky}}{{/if}}
+          {{#if isLabrador}}{{/if}}
+          {{#if isFrenchy}}{{/if}}
 
-<ul id="doggoList">
-  {{#each doggos}}
-    <li>
-      <a class="doggo-name" href="/doggos/{{id}}">{{name}}:<div class="capitilize">{{this.pets}}</div>, {{this.age}} , {{location}}, {{important}}.</a> 
+          {{name}}:<div class="capitilize">{{this.pets}}</div>,
+          {{this.age}},
+          {{location}},
+          {{important}}.</a>
+      </li>
+    {{/each}}
 
-    </li>
-  {{/each}}
-
-</ul>
+  </ul>
 </div>

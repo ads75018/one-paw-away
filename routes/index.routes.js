@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const moment = require("moment");
 
-
 const User = require("../models/User.model");
 const Message = require("../models/Message.model");
 
@@ -62,7 +61,12 @@ router.get("/doggos/:id/dms", ensureIsLogged, (req, res, next) => {
 });
 
 router.post("/doggos/:id/dms", ensureIsLogged, (req, res, next) => {
-  console.log("check this =>>>>>", req.body, req.session.currentUser._id,  req.body);
+  console.log(
+    "check this =>>>>>",
+    req.body,
+    req.session.currentUser._id,
+    req.body
+  );
 
   Message.create({
     sender: req.session.currentUser._id,
@@ -108,6 +112,7 @@ router.get("/classifieds", ensureIsLogged, (req, res, next) => {
 
 router.get("/doggos/:id/send-bone", (req, res, next) => {
   console.log("oi:", req.params.id);
+
   User.findByIdAndUpdate(
     { _id: req.params.id },
     {
@@ -120,12 +125,18 @@ router.get("/doggos/:id/send-bone", (req, res, next) => {
 
 router.get("/doggos/:id/accepted", ensureIsLogged, (req, res, next) => {
   console.log("oi:", req.params.id);
-  console.log("oi:", req.params.id);
+  console.log("oii array:", req.params.id);
+  User.findById(req.session.currentUser.id)
+    .then(function (user) {
+      console.log("log", req.session.currentUser.requests);
+      req.session.currentUser.friends.push(req.params.id);
+      req.session.currentUser.requests.filter(
+        (request) => request === req.params.id
+      );
+    })
+    .catch((error) => next(error));
+
   User.findByIdAndUpdate(
-    { _id: req.session.currentUser._id },
-    {
-      friends: req.params.id,
-    },
     { _id: req.params.id },
     {
       friends: req.session.currentUser._id,
