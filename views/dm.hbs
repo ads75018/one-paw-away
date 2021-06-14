@@ -1,5 +1,29 @@
 To {{user.name}} from {{sender.name}}
+{{!-- <br>
+<br>
+{{#each message}}
 
+<br>
+{{message}}
+{{/each}} --}}
+<br>
+<br>
+
+{{#each messageReceived}}
+{{../user.name}}:
+{{this.message}} 
+<br>
+
+{{/each}} 
+
+
+
+<br>
+{{#each messageSent}}
+{{../sender.name}}: 
+{{this.message}} 
+<br>
+{{/each}}  
 
 
 

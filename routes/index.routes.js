@@ -4,6 +4,7 @@ const moment = require("moment");
 
 const User = require("../models/User.model");
 const Message = require("../models/Message.model");
+const { isValidObjectId } = require("mongoose");
 
 function ensureIsLogged(req, res, next) {
   if (req.session.currentUser) {
@@ -13,7 +14,6 @@ function ensureIsLogged(req, res, next) {
   }
 }
 
-/* GET home page */
 router.get("/", (req, res, next) => {
   res.redirect("/login");
 });
@@ -46,54 +46,9 @@ router.post("/profile", ensureIsLogged, (req, res, next) => {
     .catch((err) => next(err));
 });
 
-router.get("/doggos/:id/dms", ensureIsLogged, (req, res, next) => {
-  User.findById(req.session.currentUser._id)
-    .then((user) => {
-      User.findById(req.params.id).then((sender) => {
-        console.log("ici=>", user);
-        res.render("dm.hbs", { user, sender });
-      });
-    })
-    .catch((error) => {
-      console.log("Error while getting the Doggos from DB:", error);
-      next(error);
-    });
-});
-
-router.post("/doggos/:id/dms", ensureIsLogged, (req, res, next) => {
-  console.log(
-    "check this =>>>>>",
-    req.body,
-    req.session.currentUser._id,
-    req.body
-  );
-
-  Message.create({
-    sender: req.session.currentUser._id,
-    receiver: req.params.id,
-    message: req.body.message,
-  })
-    .then((user) => res.redirect("/classifieds"))
-    .catch((err) => next(err));
-});
-
-router.get("/messages", ensureIsLogged, (req, res, next) => {
-  console.log(req.session.currentUser);
-
-  User.findById(req.session.currentUser._id)
-    .populate("requests")
-    .populate("friends")
-    .then((user) => {
-      console.log("user requests", user.requests, "user friends", user.friends);
-      res.render("messages", { user });
-    })
-    .catch((error) => next(error));
-});
-
 router.get("/classifieds", ensureIsLogged, (req, res, next) => {
   User.find({})
     .then((allTheDoggosFromDB) => {
-      // [ {_id: , ... , age:  }, {}, ... ]
       for (let i = 0; i < allTheDoggosFromDB.length; i++) {
         const doggo = allTheDoggosFromDB[i];
         doggo.age = moment(allTheDoggosFromDB[i].birthday).format("LL");
@@ -108,6 +63,18 @@ router.get("/classifieds", ensureIsLogged, (req, res, next) => {
       console.log("Error while getting the Doggos from DB:", error);
       next(error);
     });
+});
+
+router.get("/messages", ensureIsLogged, (req, res, next) => {
+  console.log(req.session.currentUser);
+
+  User.findById(req.session.currentUser._id)
+    .populate("requests")
+    .populate("friends")
+    .then((user) => {
+      res.render("messages", { user });
+    })
+    .catch((error) => next(error));
 });
 
 router.get("/doggos/:id/send-bone", (req, res, next) => {
@@ -126,38 +93,83 @@ router.get("/doggos/:id/send-bone", (req, res, next) => {
 router.get("/doggos/:id/accepted", ensureIsLogged, (req, res, next) => {
   console.log("oi:", req.params.id);
   console.log("oii array:", req.params.id);
+
   User.findById(req.session.currentUser.id)
     .then(function (user) {
-      console.log("log", req.session.currentUser.requests);
       req.session.currentUser.friends.push(req.params.id);
+      // req.params.id.friends.push(req.session.currentUser.id)
       req.session.currentUser.requests.filter(
         (request) => request === req.params.id
       );
+      User.findByIdAndUpdate(
+        { _id: req.params.id },
+        {
+          friends: req.session.currentUser._id,
+        }
+      ).then((user) => {});
+      res.redirect("/classifieds");
     })
-    .catch((error) => next(error));
-
-  User.findByIdAndUpdate(
-    { _id: req.params.id },
-    {
-      friends: req.session.currentUser._id,
-    }
-  )
-    .then((user) => res.redirect("/classifieds"))
     .catch((err) => next(err));
 });
 
-// router.get("/doggos/:id/dm", (req, res, next) => {
-//   console.log("oi:", req.params.id);
-//   console.log("oi:", req.params.id);
-//   User.findByIdAndUpdate(
-//     { _id: req.session.currentUser._id },
-//     {
-//       friends: req.params.id,
-//     }
-//   )
-//     .then((user) => res.render("/classifieds", { user }))
-//     .catch((err) => next(err));
-// });
+router.get("/doggos/:id/dms", ensureIsLogged, (req, res, next) => {
+  const sender = req.params.id;
+  const receiver = req.session.currentUser._id;
+  User.findById(req.session.currentUser._id)
+    .then((user) => {
+      User.findById(req.params.id).then((sender) => {
+        console.log("ici=>", user, "oi", sender);
+        console.log("sender id", req.params.id);
+        console.log("receiver id", req.session.currentUser._id);
+        Message.find({
+          sender: req.params.id,
+          receiver: req.session.currentUser._id,
+        }).then((messageReceived) => {
+          Message.find({
+            receiver: req.params.id,
+            sender: req.session.currentUser._id,
+          }).then((messageSent) => {
+            console.log("sender id", req.params.id);
+            console.log("receiver id", req.session.currentUser._id);
+            console.log(messageReceived);
+            res.render("dm.hbs", {
+              user,
+              sender,
+              messageReceived,
+              messageSent,
+            });
+          });
+        });
+      });
+    })
+    .catch((error) => {
+      console.log("Error while getting the Doggos from DB:", error);
+      next(error);
+    });
+});
+
+router.post("/doggos/:id/dms", ensureIsLogged, (req, res, next) => {
+  console.log(
+    "check this =>>>>>",
+    req.body,
+    req.session.currentUser._id,
+    req.body
+  );
+  Message.deleteOne({
+    sender: req.session.currentUser._id,
+    receiver: req.params.id,
+  })
+    .then((user) => {
+      Message.create({
+        sender: req.session.currentUser._id,
+        receiver: req.params.id,
+        message: req.body.message,
+      });
+    })
+
+    .then((user) => res.redirect("/classifieds"))
+    .catch((err) => next(err));
+});
 
 router.get("/doggos/:id", ensureIsLogged, (req, res, next) => {
   console.log("doggo is :", req.params.id);
@@ -179,7 +191,6 @@ router.get("/doggos/:id", ensureIsLogged, (req, res, next) => {
         if (req.session.currentUser.requests.includes(req.params.id)) {
           res.render("doggo", { doggo, isBone });
         } else {
-          // res.render("doggo", { doggo, isNotSent });
           if (req.params.id === req.session.currentUser._id) {
             res.render("doggo", { doggo, isUser });
           } else {

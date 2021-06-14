@@ -2,7 +2,7 @@
 
 {{#each user.requests}}
 A bone from {{this.name}} 
-<a href="/{{this.id}}">open</a>
+<a href="/doggos/{{this.id}}">open</a>
 {{/each}}
 
 
@@ -11,7 +11,7 @@ A bone from {{this.name}}
 <br>
 {{#each user.friends}}
 <br>
-You can message {{this.name}} 
+Chat with {{this.name}} 
 <a href="/doggos/{{this.id}}/dms">open</a>
 {{/each}}
 
