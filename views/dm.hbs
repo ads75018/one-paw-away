@@ -19,7 +19,7 @@ from
 
 
 {{#each messageReceived}}
-<div class="capitilize">{{../user.name}}:</div>
+<div class="capitilize">{{../sender.name}}:</div>
 {{this.message}} 
 <br>
 
@@ -29,7 +29,8 @@ from
 
 <br>
 {{#each messageSent}}
-<div class="capitilize">{{../sender.name}}: </div>
+<div class="capitilize">{{
+  ../user.name}}: </div>
 {{this.message}} 
 <br>
 {{/each}}  
