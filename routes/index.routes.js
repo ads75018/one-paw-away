@@ -184,6 +184,7 @@ router.get("/doggos/:id", ensureIsLogged, (req, res, next) => {
       isAccepted = true;
       isNotSent = true;
       isUser = true;
+      doggo.age = moment(doggo.birthday).format("LL")
 
       if (req.session.currentUser.friends.includes(req.params.id)) {
         res.render("doggo", { doggo, isAccepted });

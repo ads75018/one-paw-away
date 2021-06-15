@@ -1,26 +1,55 @@
-{{doggo.name}}
-{{doggo.bio}}
+<p class="header-message">{{doggo.name}}</p>  
+<br>
+<div class="doggo-content">
+
+
+
+<div class="first-half">
+
+
+Doggo Type: <br>
 {{doggo.pets}}
-{{doggo.birthday}}
-{{doggo.important}}
+<br> <br>
+Born: <br>
+{{doggo.age}}
+<br> <br>
+Location: <br>
 {{doggo.location}}
+<br> <br>
+{{doggo.important}}
+
+
+</div>
+<br>
+<div class="second-half">
+
+
+{{doggo.bio}}
+
+</div>
+
+</div>
+
+
 
 <div class="button-containers">
   <a id="button-link" href="/">Go Back</a>
-</div>
+
 
 {{#if isAccepted}}
-  <a href="/doggos/{{doggo.id}}/dms"> Message </a>
+  <a id="button-link" href="/doggos/{{doggo.id}}/dms"> Message </a>
 {{/if}}
 
 {{#if isBone}}
-  <a href="/doggos/{{doggo.id}}/accepted"> Accept </a>
+  <a id="button-link-bonez" href="/doggos/{{doggo.id}}/accepted"> Accept </a>
 {{/if}}
 
 {{#if isNotSent}}
-  <a href="/doggos/{{doggo.id}}/send-bone"> Send Bone </a>
+  <a id="button-link-bonez" href="/doggos/{{doggo.id}}/send-bone"> Send Bone </a>
 {{/if}}
 
 {{#if isUser}}
 
 {{/if}}
+
+</div>

@@ -1,17 +1,30 @@
-
+<p>Messages</p> 
+<div class="bone-box" >
 
 {{#each user.requests}}
-A bone from {{this.name}} 
-<a href="/doggos/{{this.id}}">open</a>
+ A bone from {{this.name}} 
+<a id="button-link-messages" href="/doggos/{{this.id}}">Open</a>
 {{/each}}
+</div>
 
-
-
+<div class="bone-box" >
 
 <br>
 {{#each user.friends}}
-<br>
+<br> 
 Chat with {{this.name}} 
-<a href="/doggos/{{this.id}}/dms">open</a>
+<a   href="/doggos/{{this.id}}/dms">Open</a> 
 {{/each}}
+</div>
+<br>
+
+    <div class="button-containers">
+
+      <a id="button-link" href='/classifieds'>Go Back</a>
+
+
+            {{!-- <a id="button-link" href='/profile/save'>Save</a>
+                  <a id="button-link" href='/home'>Delete</a> --}}
+
+  </div>
 

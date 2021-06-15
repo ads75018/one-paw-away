@@ -1,4 +1,12 @@
-To {{user.name}} from {{sender.name}}
+
+<div class="header-message">
+<p>
+To {{user.name}} 
+from
+{{sender.name}} 
+</p>
+</div>
+
 {{!-- <br>
 <br>
 {{#each message}}
@@ -9,8 +17,9 @@ To {{user.name}} from {{sender.name}}
 <br>
 <br>
 
+
 {{#each messageReceived}}
-{{../user.name}}:
+<div class="capitilize">{{../user.name}}:</div>
 {{this.message}} 
 <br>
 
@@ -28,20 +37,21 @@ To {{user.name}} from {{sender.name}}
 
 
 
-<form action="" method="POST" class="form-doggo">
+<form action="" method="POST" >
 <input type="hidden" name="receiver" value="{{user.id}}">
-  <div class="form-thing" id="form-hing">
-    <label><textarea name="message" id="message" maxlength="280" required></textarea></label>
 
+
+  <div >
+    <label><textarea name="message" id="bio-doggo" maxlength="280" required  class="doggo-message"></textarea></label>
   </div>
-
+<br>
 
     <div class="button-containers">
 
-      <a id="button-link" href='/classifieds'>Go Back</a>
+      <a id="button-link" href='/messages'>Go Back</a>
 
 
-      <button id="button-link" type="submit">Save</button>
+      <button id="button-link" type="submit">Send</button>
 
             {{!-- <a id="button-link" href='/profile/save'>Save</a>
                   <a id="button-link" href='/home'>Delete</a> --}}

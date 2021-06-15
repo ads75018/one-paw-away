@@ -1,5 +1,5 @@
 <p>Profile</p>
-
+<br>
 <form action="/profile" method="POST" class="form-doggo">
 
   <div class="form-thing">
@@ -9,7 +9,7 @@
         name="name"
         required
         value="{{user.name}}"
-        maxlength="12"
+
         readonly
       />
     </label>
@@ -58,7 +58,6 @@
         name="location"
         required
         value="{{user.location}}"
-        maxlength="10"
       />
     </label>
 
@@ -71,7 +70,7 @@
         type="text"
         name="important"
         value="{{user.important}}"
-        maxlength="25"
+        maxlength="26"
         required
       /></label>
   </div>
@@ -105,7 +104,7 @@
     <label>Bio:<textarea
         name="bio"
         id="bio"
-        maxlength="280"
+        maxlength="260"
         required
       >{{user.bio}}</textarea></label>
 
